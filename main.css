@@ -2,9 +2,10 @@
 :root{
   --heo-white: #fff;
   --heo-white-op: rgba(255,255,255,0.2);
+  /* --heo-black: #000; */
   --heo-black: #9e0d1d;
   --heo-black-op: rgba(0,0,0,0.2);
-  --heo-none: #9e0d1d01e00;
+  --heo-none: #00001e00;
   --heo-gray: #999999;
   --heo-gray-op: #9999992b;
   --heo-vip: #e5a80d;
@@ -58,11 +59,11 @@ html {
   --heo-yellow: #c28b00;
   --heo-yellow-op: #d99c001a;
   --heo-orange: #ffc635;
-  --heo-fontcolor: #9e0d1d01e;
+  --heo-fontcolor: #00001e;
   --heo-background: #F5F5F7;
-  // --heo-navbg: rgba(22, 22, 23, 0.91); //
+  /* --heo-navbg: rgba(22, 22, 23, 0.91); */
   --heo-navbg: #9e0d1d;
-  --heo-reverse: #9e0d1d;
+  --heo-reverse: #000;
   --heo-maskbg: rgba(255, 255, 255, 0.6);
   --heo-maskbgdeep: rgba(255, 255, 255, 0.85);
   --heo-hovertext: var(--heo-main);
@@ -179,7 +180,7 @@ img {
   align-items: center;
   z-index: 2;
   transition: ease-in-out 0.3s;
-  backdrop-filter: blur(10px); /* 调整模糊效果的值 */
+  backdrop-filter: blur(10px); 
 }
 
 .nav-content {
@@ -255,7 +256,7 @@ a.nav-item {
   color: var(--heo-white);
   opacity: 0.8;
   transition: ease-in-out 0.3s;
-  font-size: 14px;
+  font-size: 15px;
   margin: 0 2px;
   padding: 4px 8px;
   border-radius: 16px;
@@ -279,13 +280,39 @@ a.nav-item:hover {
   margin-bottom: 120px;
   align-items: center;
 }
+/* 
+.new-year-theme {
+  display: block;
+  background: url(./img/new-year-magic.jpeg) no-repeat;
+  height: 300px;
+  background-size: 80%;
+  width: auto;
+  margin: auto;
+} */
+
+.new-year-theme {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: auto;
+  margin-bottom: -60px;
+}
+
+.banner-img-newyear {
+  width: 1200px;
+  max-width: 100%;
+  animation: floating 4s ease-in-out infinite;
+  pointer-events: none;
+  object-fit: cover;
+}
 
 .title-group {
   display: flex;
   flex-direction: column;
   font-size: 70px;
   font-weight: 400;
-  color: #9e0d1d01e;
+  color: #00001e;
   line-height: 88px;
   font-weight: bold;
   font-family: system-ui;
@@ -295,7 +322,7 @@ span.discription-text {
   display: block;
   font-size: 28px;
   font-weight: 400;
-  color: #9e0d1d01e;
+  color: #00001e;
   line-height: 34px;
   margin-top: 28px;
   font-weight: bold;
@@ -471,7 +498,7 @@ a.linkbutton:active {
 /* banner */
 
 .product-banner {
-  background-image: linear-gradient(180deg, #02162A 0%, #9e0d1d01e 100%);
+  background-image: linear-gradient(180deg, #02162A 0%, #00001e 100%);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -627,7 +654,8 @@ a.second-link:hover {
   font-size: 16px;
   margin-top: 24px;
   opacity: 0.8;
-  line-height: 1.2;
+  line-height: 1.6;
+  text-align: justify;
   max-width: calc(100% - 700px);
   color: var(--heo-white);
 }
@@ -706,11 +734,28 @@ span.avatar-name {
   .group-item {
     width: 50%;
   }
+  
 
+  .special-card {
+    line-height: 1.2;
+    margin-top: 8px;
+    max-width: calc(100% - 100px);
+    color: var(--heo-white);
+  }
+
+  .special-card-left .title {
+    max-width: 400px;
+  }
+
+  .special-card-left .discription {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
   .special-card {
     display: none;
   }
-
 }
 
 @media screen and (max-width: 768px) {
@@ -732,6 +777,10 @@ span.avatar-name {
 
   body .need-padding {
     width: 80%;
+  }
+
+  .special-card {
+    display: none;
   }
 
   .first-stack {
